@@ -2,9 +2,9 @@
   "apiVersion": "dashboard.grafana.app/v2",
   "kind": "Dashboard",
   "metadata": {
-    "name": "adx2jsv",
-    "generation": 2,
-    "creationTimestamp": "2026-06-12T20:11:16Z",
+    "name": "adhrv5b",
+    "generation": 3,
+    "creationTimestamp": "2026-06-12T20:07:48Z",
     "labels": {},
     "annotations": {}
   },
@@ -37,7 +37,7 @@
         "kind": "Panel",
         "spec": {
           "id": 1,
-          "title": "Temperature salle B102",
+          "title": "Température salle E208",
           "description": "",
           "links": [],
           "data": {
@@ -88,13 +88,13 @@
                           {
                             "key": "building::tag",
                             "operator": "=",
-                            "value": "B"
+                            "value": "RT"
                           },
                           {
                             "condition": "AND",
                             "key": "room::tag",
                             "operator": "=",
-                            "value": "B102"
+                            "value": "E208"
                           }
                         ]
                       },
@@ -197,7 +197,7 @@
         "kind": "Panel",
         "spec": {
           "id": 2,
-          "title": "Temperature salle B202",
+          "title": "Temperature salle E104",
           "description": "",
           "links": [],
           "data": {
@@ -248,13 +248,13 @@
                           {
                             "key": "building::tag",
                             "operator": "=",
-                            "value": "B"
+                            "value": "RT"
                           },
                           {
                             "condition": "AND",
                             "key": "room::tag",
                             "operator": "=",
-                            "value": "B202"
+                            "value": "E104"
                           }
                         ]
                       },
@@ -411,7 +411,7 @@
       "hideTimepicker": false,
       "fiscalYearStartMonth": 0
     },
-    "title": "Batiment - B",
+    "title": "Batiment - R&T",
     "variables": [],
     "preferences": {
       "layout": {
