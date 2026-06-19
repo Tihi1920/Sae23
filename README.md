@@ -33,6 +33,7 @@ Les capteurs envoient leurs données sur le broker MQTT. Node-RED récupère ces
 
 - site : tout le code du site web, les pages PHP et le CSS
 - nodered : les flows Node-RED exportés
+- grafana : les dashboards Grafana exportés en JSON et des captures du rendu
 - scripts : le script PHP qui récupère les données MQTT et le script de sauvegarde de la base
 - bdd : le schéma de la base de données
 
