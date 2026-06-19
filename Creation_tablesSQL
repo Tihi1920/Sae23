@@ -1,0 +1,49 @@
+CREATE DATABASE IF NOT EXISTS Sae23 ;
+USE Sae23;
+
+-- 1. Table Batiment
+-- Contains unique ID, name, and manager credentials (login, password)
+CREATE TABLE IF NOT EXISTS Batiment (
+    id_bat INT AUTO_INCREMENT PRIMARY KEY,
+    nom VARCHAR(50) NOT NULL UNIQUE,
+    login_gestionnaire VARCHAR(50) NOT NULL UNIQUE,
+    mdp_gestionnaire VARCHAR(255) NOT NULL
+);
+
+-- 2. Table Salle
+-- Contains unique name, type, capacity, and linked building ID
+CREATE TABLE IF NOT EXISTS Salle (
+    nom_salle VARCHAR(50) PRIMARY KEY,
+    type_salle VARCHAR(50) NOT NULL,
+    capacite INT NOT NULL,
+    id_bat INT,
+    FOREIGN KEY (id_bat) REFERENCES Batiment(id_bat) ON DELETE CASCADE
+);
+
+-- 3. Table Capteur
+-- Contains unique name, type, unit, and linked room name
+CREATE TABLE IF NOT EXISTS Capteur (
+    nom_capteur VARCHAR(50) PRIMARY KEY,
+    type_capteur VARCHAR(50) NOT NULL,
+    unite VARCHAR(10) NOT NULL,
+    nom_salle VARCHAR(50),
+    FOREIGN KEY (nom_salle) REFERENCES Salle(nom_salle) ON DELETE CASCADE
+);
+
+-- 4. Table Mesure
+-- Contains unique ID, date, time, value, and linked sensor name
+CREATE TABLE IF NOT EXISTS Mesure (
+    id_mesure INT AUTO_INCREMENT PRIMARY KEY,
+    date_mesure DATE NOT NULL,
+    horaire_mesure TIME NOT NULL,
+    valeur DECIMAL(5,2) NOT NULL,
+    nom_capteur VARCHAR(50),
+    FOREIGN KEY (nom_capteur) REFERENCES Capteur(nom_capteur) ON DELETE CASCADE
+);
+
+-- 5. Table Administrateur (For site admin access control)
+CREATE TABLE IF NOT EXISTS Administrateur (
+    id_admin INT AUTO_INCREMENT PRIMARY KEY,
+    login_admin VARCHAR(50) NOT NULL UNIQUE,
+    mdp_admin VARCHAR(255) NOT NULL
+);
