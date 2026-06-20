@@ -10,7 +10,7 @@
 // the admin, so the script can handle them too without changing the code.
 
 // Connect to the database
-$bdd = mysqli_connect('127.0.0.1', '', 'chap1234', 'sae23');
+$bdd = mysqli_connect('127.0.0.1', 'diallo', 'chap1234', 'sae23');
 
 if (!$bdd) {
     echo "Database connection failed\n";
