@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Administration - Supervision IUT Blagnac</title>
+    <link rel="stylesheet" type="text/css" href="style.css" media="screen">
+</head>
+<body>
+
+    <!-- Navigation bar -->
+    <nav>
+        <ul>
+            <li><a href="index.html">Accueil</a></li>
+            <li><a href="consultation.html">Consultation</a></li>
+            <li><a href="gestion.html">Gestion</a></li>
+            <li><a href="administration.html" class="active">Administration</a></li>
+            <li><a href="projet.html">Gestion de projet</a></li>
+            <li><a href="connexion.html">Connexion</a></li>
+        </ul>
+    </nav>
+
+    <!-- Page title -->
+    <header>
+        <h1>Administration</h1>
+    </header>
+
+    <main>
+
+        <?php
+        /*
+        === PHP session check - only admin can access this page ===
+
+        session_start();
+        if (!isset($_SESSION['login']) || $_SESSION['role'] !== 'admin') {
+            header('Location: connexion.php');
+            exit();
+        }
+        */
+        ?>
+
+        <!-- Access restriction notice -->
+        <section>
+            <h2>Accès réservé à l'administrateur</h2>
+            <p>
+                Cette page est accessible uniquement à l'administrateur du site.
+                Vous pouvez ici ajouter ou supprimer des bâtiments, des salles et des capteurs
+                via des formulaires.
+            </p>
+            <p><a href="connexion.html">Se connecter</a></p>
+        </section>
+
+        <!-- Add a building -->
+        <section>
+            <h2>Ajouter un bâtiment</h2>
+
+            <form action="administration.html" method="post">
+
+                <input type="hidden" name="action" value="ajout_batiment">
+
+                <label for="nom_bat">Nom du bâtiment :</label>
+                <input type="text" id="nom_bat" name="nom_bat" placeholder="Ex : Bâtiment RT" required>
+
+                <label for="login_gest">Login gestionnaire :</label>
+                <input type="text" id="login_gest" name="login_gest" placeholder="Ex : dupont" required>
+
+                <label for="mdp_gest">Mot de passe gestionnaire :</label>
+                <input type="password" id="mdp_gest" name="mdp_gest" placeholder="Mot de passe" required>
+
+                <input type="submit" value="Ajouter le bâtiment">
+
+            </form>
+
+            <?php
+            /*
+            if (isset($_POST['action']) && $_POST['action'] === 'ajout_batiment') {
+                $bdd = mysqli_connect('localhost', 'root', '', 'sae23');
+                $nom = $_POST['nom_bat'];
+                $login = $_POST['login_gest'];
+                $mdp = $_POST['mdp_gest'];
+                // Insert building and gestionnaire account into database
+                mysqli_query($bdd, "INSERT INTO batiment (nom) VALUES ('$nom')");
+                $id_bat = mysqli_insert_id($bdd);
+                mysqli_query($bdd, "INSERT INTO utilisateur (login, mdp, role, id_batiment) VALUES ('$login', '$mdp', 'gestionnaire', '$id_bat')");
+                echo '<p class="message-ok">Bâtiment ajouté avec succès.</p>';
+            }
+            */
+            ?>
+        </section>
+
+        <!-- Delete a building -->
+        <section>
+            <h2>Supprimer un bâtiment</h2>
+
+            <form action="administration.html" method="post">
+
+                <input type="hidden" name="action" value="supp_batiment">
+
+                <label for="id_bat_supp">Bâtiment à supprimer :</label>
+                <select id="id_bat_supp" name="id_bat_supp">
+                    <!-- Options populated by PHP from the database -->
+                    <option value="">-- Choisir un bâtiment --</option>
+                    <?php
+                    /*
+                    $bdd = mysqli_connect('localhost', 'root', '', 'sae23');
+                    $res = mysqli_query($bdd, "SELECT * FROM batiment");
+                    while ($bat = mysqli_fetch_assoc($res)) {
+                        echo '<option value="' . $bat['id'] . '">' . $bat['nom'] . '</option>';
+                    }
+                    */
+                    ?>
+                </select>
+
+                <input type="submit" value="Supprimer le bâtiment">
+
+            </form>
+        </section>
+
+        <!-- Add a room -->
+        <section>
+            <h2>Ajouter une salle</h2>
+
+            <form action="administration.html" method="post">
+
+                <input type="hidden" name="action" value="ajout_salle">
+
+                <label for="nom_salle">Nom de la salle :</label>
+                <input type="text" id="nom_salle" name="nom_salle" placeholder="Ex : E208" required>
+
+                <label for="type_salle">Type :</label>
+                <input type="text" id="type_salle" name="type_salle" placeholder="Ex : Salle TP">
+
+                <label for="capacite">Capacité :</label>
+                <input type="number" id="capacite" name="capacite" placeholder="Ex : 30">
+
+                <label for="id_batiment">Bâtiment :</label>
+                <select id="id_batiment" name="id_batiment">
+                    <!-- Options populated by PHP from the database -->
+                    <option value="">-- Choisir un bâtiment --</option>
+                    <?php
+                    /*
+                    $res = mysqli_query($bdd, "SELECT * FROM batiment");
+                    while ($bat = mysqli_fetch_assoc($res)) {
+                        echo '<option value="' . $bat['id'] . '">' . $bat['nom'] . '</option>';
+                    }
+                    */
+                    ?>
+                </select>
+
+                <input type="submit" value="Ajouter la salle">
+
+            </form>
+        </section>
+
+        <!-- Delete a room -->
+        <section>
+            <h2>Supprimer une salle</h2>
+
+            <form action="administration.html" method="post">
+
+                <input type="hidden" name="action" value="supp_salle">
+
+                <label for="id_salle_supp">Salle à supprimer :</label>
+                <select id="id_salle_supp" name="id_salle_supp">
+                    <option value="">-- Choisir une salle --</option>
+                    <?php
+                    /*
+                    $res = mysqli_query($bdd, "SELECT * FROM salle");
+                    while ($salle = mysqli_fetch_assoc($res)) {
+                        echo '<option value="' . $salle['id'] . '">' . $salle['nom'] . '</option>';
+                    }
+                    */
+                    ?>
+                </select>
+
+                <input type="submit" value="Supprimer la salle">
+
+            </form>
+        </section>
+
+        <!-- Add a sensor -->
+        <section>
+            <h2>Ajouter un capteur</h2>
+
+            <form action="administration.html" method="post">
+
+                <input type="hidden" name="action" value="ajout_capteur">
+
+                <label for="nom_capteur">Nom du capteur :</label>
+                <input type="text" id="nom_capteur" name="nom_capteur" placeholder="Ex : AM107-E208" required>
+
+                <label for="type_capteur">Type :</label>
+                <input type="text" id="type_capteur" name="type_capteur" placeholder="Ex : Température">
+
+                <label for="unite">Unité :</label>
+                <input type="text" id="unite" name="unite" placeholder="Ex : °C">
+
+                <label for="id_salle">Salle :</label>
+                <select id="id_salle" name="id_salle">
+                    <option value="">-- Choisir une salle --</option>
+                    <?php
+                    /*
+                    $res = mysqli_query($bdd, "SELECT * FROM salle");
+                    while ($salle = mysqli_fetch_assoc($res)) {
+                        echo '<option value="' . $salle['id'] . '">' . $salle['nom'] . '</option>';
+                    }
+                    */
+                    ?>
+                </select>
+
+                <input type="submit" value="Ajouter le capteur">
+
+            </form>
+        </section>
+
+        <!-- Delete a sensor -->
+        <section>
+            <h2>Supprimer un capteur</h2>
+
+            <form action="administration.html" method="post">
+
+                <input type="hidden" name="action" value="supp_capteur">
+
+                <label for="id_capteur_supp">Capteur à supprimer :</label>
+                <select id="id_capteur_supp" name="id_capteur_supp">
+                    <option value="">-- Choisir un capteur --</option>
+                    <?php
+                    /*
+                    $res = mysqli_query($bdd, "SELECT * FROM capteur");
+                    while ($cap = mysqli_fetch_assoc($res)) {
+                        echo '<option value="' . $cap['id'] . '">' . $cap['nom'] . ' (' . $cap['type'] . ')</option>';
+                    }
+                    */
+                    ?>
+                </select>
+
+                <input type="submit" value="Supprimer le capteur">
+
+            </form>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>SAE23 - BUT R&amp;T IUT de Blagnac - 2025/2026</p>
+    </footer>
+
+</body>
+</html>
