@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <!-- Page refreshes every 30 seconds to show latest sensor data -->
+    <meta http-equiv="refresh" content="30">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consultation - Supervision IUT Blagnac</title>
+    <link rel="stylesheet" type="text/css" href="style.css" media="screen">
+</head>
+<body>
+
+    <!-- Navigation bar -->
+    <nav>
+        <ul>
+            <li><a href="index.html">Accueil</a></li>
+            <li><a href="consultation.html" class="active">Consultation</a></li>
+            <li><a href="gestion.html">Gestion</a></li>
+            <li><a href="administration.html">Administration</a></li>
+            <li><a href="projet.html">Gestion de projet</a></li>
+            <li><a href="connexion.html">Connexion</a></li>
+        </ul>
+    </nav>
+
+    <!-- Page title -->
+    <header>
+        <h1>Consultation des dernières mesures</h1>
+    </header>
+
+    <main>
+
+        <!-- Explanation -->
+        <section>
+            <h2>Dernières mesures de toutes les salles</h2>
+            <p>
+                Cette page affiche la dernière mesure relevée pour chaque capteur
+                dans l'ensemble des salles surveillées. Les données sont actualisées
+                automatiquement toutes les 30 secondes.
+            </p>
+        </section>
+
+        <!-- Bâtiment RT -->
+        <section>
+            <h2>Bâtiment RT</h2>
+
+            <h3>Salle E208</h3>
+            <table border="1">
+                <tr>
+                    <th>Capteur</th>
+                    <th>Dernière valeur</th>
+                    <th>Unité</th>
+                    <th>Date et heure</th>
+                </tr>
+                <!-- Data will be inserted here by PHP from MySQL database -->
+                <tr>
+                    <td>Température</td>
+                    <td><?php /* echo $temp_E208; */ ?> --</td>
+                    <td>°C</td>
+                    <td><?php /* echo $date_E208; */ ?> --</td>
+                </tr>
+                <tr>
+                    <td>Humidité</td>
+                    <td><?php /* echo $hum_E208; */ ?> --</td>
+                    <td>%</td>
+                    <td><?php /* echo $date_E208; */ ?> --</td>
+                </tr>
+                <tr>
+                    <td>CO2</td>
+                    <td><?php /* echo $co2_E208; */ ?> --</td>
+                    <td>ppm</td>
+                    <td><?php /* echo $date_E208; */ ?> --</td>
+                </tr>
+                <tr>
+                    <td>Pression</td>
+                    <td><?php /* echo $pres_E208; */ ?> --</td>
+                    <td>hPa</td>
+                    <td><?php /* echo $date_E208; */ ?> --</td>
+                </tr>
+            </table>
+
+            <br>
+
+            <h3>Salle E104</h3>
+            <table border="1">
+                <tr>
+                    <th>Capteur</th>
+                    <th>Dernière valeur</th>
+                    <th>Unité</th>
+                    <th>Date et heure</th>
+                </tr>
+                <!-- Data will be inserted here by PHP from MySQL database -->
+                <tr>
+                    <td>Température</td>
+                    <td><?php /* echo $temp_E104; */ ?> --</td>
+                    <td>°C</td>
+                    <td><?php /* echo $date_E104; */ ?> --</td>
+                </tr>
+                <tr>
+                    <td>Humidité</td>
+                    <td><?php /* echo $hum_E104; */ ?> --</td>
+                    <td>%</td>
+                    <td><?php /* echo $date_E104; */ ?> --</td>
+                </tr>
+                <tr>
+                    <td>CO2</td>
+                    <td><?php /* echo $co2_E104; */ ?> --</td>
+                    <td>ppm</td>
+                    <td><?php /* echo $date_E104; */ ?> --</td>
+                </tr>
+                <tr>
+                    <td>Pression</td>
+                    <td><?php /* echo $pres_E104; */ ?> --</td>
+                    <td>hPa</td>
+                    <td><?php /* echo $date_E104; */ ?> --</td>
+                </tr>
+            </table>
+        </section>
+
+        <!-- Bâtiment B -->
+        <section>
+            <h2>Bâtiment B</h2>
+
+            <h3>Salle B102</h3>
+            <table border="1">
+                <tr>
+                    <th>Capteur</th>
+                    <th>Dernière valeur</th>
+                    <th>Unité</th>
+                    <th>Date et heure</th>
+                </tr>
+                <!-- Data will be inserted here by PHP from MySQL database -->
+                <tr>
+                    <td>Température</td>
+                    <td><?php /* echo $temp_B102; */ ?> --</td>
+                    <td>°C</td>
+                    <td><?php /* echo $date_B102; */ ?> --</td>
+                </tr>
+                <tr>
+                    <td>Humidité</td>
+                    <td><?php /* echo $hum_B102; */ ?> --</td>
+                    <td>%</td>
+                    <td><?php /* echo $date_B102; */ ?> --</td>
+                </tr>
+                <tr>
+                    <td>CO2</td>
+                    <td><?php /* echo $co2_B102; */ ?> --</td>
+                    <td>ppm</td>
+                    <td><?php /* echo $date_B102; */ ?> --</td>
+                </tr>
+                <tr>
+                    <td>Pression</td>
+                    <td><?php /* echo $pres_B102; */ ?> --</td>
+                    <td>hPa</td>
+                    <td><?php /* echo $date_B102; */ ?> --</td>
+                </tr>
+            </table>
+
+            <br>
+
+            <h3>Salle B202</h3>
+            <table border="1">
+                <tr>
+                    <th>Capteur</th>
+                    <th>Dernière valeur</th>
+                    <th>Unité</th>
+                    <th>Date et heure</th>
+                </tr>
+                <!-- Data will be inserted here by PHP from MySQL database -->
+                <tr>
+                    <td>Température</td>
+                    <td><?php /* echo $temp_B202; */ ?> --</td>
+                    <td>°C</td>
+                    <td><?php /* echo $date_B202; */ ?> --</td>
+                </tr>
+                <tr>
+                    <td>Humidité</td>
+                    <td><?php /* echo $hum_B202; */ ?> --</td>
+                    <td>%</td>
+                    <td><?php /* echo $date_B202; */ ?> --</td>
+                </tr>
+                <tr>
+                    <td>CO2</td>
+                    <td><?php /* echo $co2_B202; */ ?> --</td>
+                    <td>ppm</td>
+                    <td><?php /* echo $date_B202; */ ?> --</td>
+                </tr>
+                <tr>
+                    <td>Pression</td>
+                    <td><?php /* echo $pres_B202; */ ?> --</td>
+                    <td>hPa</td>
+                    <td><?php /* echo $date_B202; */ ?> --</td>
+                </tr>
+            </table>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>SAE23 - BUT R&amp;T IUT de Blagnac - 2025/2026</p>
+    </footer>
+
+</body>
+</html>
