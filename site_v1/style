@@ -1,0 +1,236 @@
+/* ===== General reset and base styles ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    background-color: #af7c5d;
+    color: white;
+}
+
+/* ===== Navigation bar ===== */
+nav {
+    background-color: #D2B48C;
+    padding: 0;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 15px 20px;
+    display: block;
+}
+
+nav ul li a:hover {
+    background-color: #C19A6B;
+}
+
+nav ul li a.active {
+    background-color: #A0522D;
+}
+
+/* ===== Header ===== */
+header {
+    background-color: #D2B48C;
+    color: white;
+    padding: 18px 24px;
+}
+
+header h1 {
+    font-size: 1.4em;
+}
+
+/* ===== Main content area ===== */
+main {
+    padding: 24px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+/* ===== Sections ===== */
+section {
+    background-color: #c19067;
+    border: 1px solid #8B5E3C;
+    border-radius: 6px;
+    padding: 20px;
+    margin-bottom: 24px;
+}
+
+section h2 {
+    font-size: 1.2em;
+    margin-bottom: 12px;
+    color: white;
+    border-bottom: 2px solid #A0522D;
+    padding-bottom: 6px;
+}
+
+section h3 {
+    font-size: 1em;
+    margin-bottom: 10px;
+    color: #fff8f0;
+}
+
+/* ===== Tables ===== */
+table {
+    border-collapse: collapse;
+    width: 100%;
+    margin-top: 10px;
+}
+
+table th {
+    background-color: #B0653A;
+    color: white;
+    padding: 8px 12px;
+    text-align: left;
+    border: 1px solid #5C2E1F;
+}
+
+table td {
+    padding: 8px 12px;
+    border: 1px solid #5C2E1F;
+    color: white;
+}
+
+table tr:nth-child(even) {
+    background-color: #ba8a65;
+}
+
+table tr:hover {
+    background-color: #C19A6B;
+}
+
+/* ===== Stats list (min, max, moyenne) ===== */
+ul.stats {
+    list-style: none;
+    padding: 0;
+}
+
+ul.stats li {
+    padding: 6px 0;
+    border-bottom: 1px solid #8B5E3C;
+    font-size: 0.95em;
+    color: white;
+}
+
+ul.stats li span {
+    font-weight: bold;
+    color: #fff8f0;
+}
+
+/* ===== Forms ===== */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    max-width: 400px;
+}
+
+form label {
+    font-size: 0.95em;
+    font-weight: bold;
+    color: white;
+}
+
+form input,
+form select {
+    padding: 8px 10px;
+    border: 1px solid #8B5E3C;
+    border-radius: 4px;
+    font-size: 0.95em;
+    width: 100%;
+    background-color: #d4a97a;
+    color: white;
+}
+
+form input[type="submit"],
+form button {
+    background-color: #A0522D;
+    color: white;
+    border: 2px solid #A0522D;
+    padding: 10px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 1em;
+}
+
+form input[type="submit"]:hover,
+form button:hover {
+    background-color: #C19A6B;
+}
+
+/* ===== Alert / info messages ===== */
+.message-ok {
+    background-color: #8B5E3C;
+    color: white;
+    border: 1px solid #5C2E1F;
+    padding: 10px 14px;
+    border-radius: 4px;
+    margin-bottom: 16px;
+}
+
+.message-erreur {
+    background-color: #7a2e1a;
+    color: white;
+    border: 1px solid #5C2E1F;
+    padding: 10px 14px;
+    border-radius: 4px;
+    margin-bottom: 16px;
+}
+
+/* ===== Footer ===== */
+footer {
+    text-align: center;
+    padding: 14px;
+    font-size: 0.85em;
+    color: #fff8f0;
+    border-top: 1px solid #8B5E3C;
+    margin-top: 30px;
+    background-color: #D2B48C;
+}
+
+/* ===== Horizontal layout for stats + table ===== */
+#tableau {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    align-items: flex-start;
+}
+
+#tableau > div {
+    flex: 1;
+    min-width: 220px;
+}
+
+/* ===== GANTT table ===== */
+.gantt th, .gantt td {
+    text-align: center;
+    font-size: 0.85em;
+    padding: 6px 8px;
+}
+
+.gantt td.fait {
+    background-color: #A0522D;
+    color: white;
+}
+
+.gantt td.encours {
+    background-color: #C19A6B;
+    color: white;
+}
+
+.gantt td.vide {
+    background-color: #d4a97a;
+}
