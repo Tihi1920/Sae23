@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Connexion - Supervision IUT Blagnac</title>
+    <link rel="stylesheet" type="text/css" href="style.css" media="screen">
+</head>
+<body>
+
+    <!-- Navigation bar -->
+    <nav>
+        <ul>
+            <li><a href="index.html">Accueil</a></li>
+            <li><a href="consultation.html">Consultation</a></li>
+            <li><a href="gestion.html">Gestion</a></li>
+            <li><a href="administration.html">Administration</a></li>
+            <li><a href="projet.html">Gestion de projet</a></li>
+            <li><a href="connexion.html" class="active">Connexion</a></li>
+        </ul>
+    </nav>
+
+    <!-- Page title -->
+    <header>
+        <h1>Connexion</h1>
+    </header>
+
+    <main>
+
+        <section>
+            <h2>Identifiez-vous</h2>
+            <p>Cette page est réservée aux administrateurs et gestionnaires de bâtiment.</p>
+            <br>
+
+            <?php
+            /* Display error message if login failed */
+            /* if (isset($erreur)) { echo '<p class="message-erreur">' . $erreur . '</p>'; } */
+            ?>
+
+            <!-- Login form - action will send data to this same page for PHP processing -->
+            <form action="connexion.html" method="post">
+
+                <label for="login">Identifiant :</label>
+                <input type="text" id="login" name="login" placeholder="Votre identifiant" required>
+
+                <label for="mdp">Mot de passe :</label>
+                <input type="password" id="mdp" name="mdp" placeholder="Votre mot de passe" required>
+
+                <input type="submit" value="Se connecter">
+
+            </form>
+        </section>
+
+        <?php
+        /*
+        === PHP session and login logic will go here ===
+
+        session_start();
+
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            $login = $_POST['login'];
+            $mdp   = $_POST['mdp'];
+
+            // Connect to MySQL database
+            $bdd = mysqli_connect('localhost', 'root', '', 'sae23');
+
+            // Query to check credentials
+            $req = mysqli_query($bdd, "SELECT * FROM utilisateur WHERE login='$login' AND mdp='$mdp'");
+            $user = mysqli_fetch_assoc($req);
+
+            if ($user) {
+                $_SESSION['login'] = $user['login'];
+                $_SESSION['role']  = $user['role'];
+                // Redirect based on role
+                if ($user['role'] === 'admin') {
+                    header('Location: administration.php');
+                } else {
+                    header('Location: gestion.php');
+                }
+            } else {
+                $erreur = "Identifiant ou mot de passe incorrect.";
+            }
+        }
+        */
+        ?>
+
+    </main>
+
+    <footer>
+        <p>SAE23 - BUT R&amp;T IUT de Blagnac - 2025/2026</p>
+    </footer>
+
+</body>
+</html>
