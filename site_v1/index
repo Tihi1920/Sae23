@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accueil - Supervision IUT Blagnac</title>
+    <link rel="stylesheet" type="text/css" href="style.css" media="screen">
+</head>
+<body>
+
+    <!-- Navigation bar -->
+    <nav>
+        <ul>
+            <li><a href="index.html" class="active">Accueil</a></li>
+            <li><a href="consultation.html">Consultation</a></li>
+            <li><a href="gestion.html">Gestion</a></li>
+            <li><a href="administration.html">Administration</a></li>
+            <li><a href="projet.html">Gestion de projet</a></li>
+            <li><a href="connexion.html">Connexion</a></li>
+        </ul>
+    </nav>
+
+    <!-- Page title -->
+    <header>
+        <h1>Supervision des capteurs de l'IUT de Blagnac</h1>
+    </header>
+
+    <main>
+
+        <!-- Site objective -->
+        <section>
+            <h2>Objectif du site</h2>
+            <p>
+                Ce site permet de visualiser les données des capteurs installés dans les salles
+                des bâtiments de l'IUT de Blagnac. Les capteurs mesurent la température,
+                la pression, le taux de CO2 et l'humidité de chaque salle.
+                Les données sont collectées automatiquement et stockées dans une base de données.
+            </p>
+            <p>
+                Selon votre profil (administrateur, gestionnaire ou visiteur),
+                vous avez accès à différentes pages du site.
+            </p>
+        </section>
+
+        <!-- Buildings and rooms -->
+        <section>
+            <h2>Bâtiments surveillés</h2>
+
+            <h3>Bâtiment RT</h3>
+            <p>Gestionnaire : M. Dupont</p>
+            <br>
+            <h3>Salles équipées et données mesurées</h3>
+            <table border="1">
+                <tr>
+                    <th>Salle</th>
+                    <th>Température</th>
+                    <th>Pression</th>
+                    <th>CO2</th>
+                    <th>Humidité</th>
+                </tr>
+                <tr>
+                    <td>E208</td>
+                    <td>Oui</td>
+                    <td>Oui</td>
+                    <td>Oui</td>
+                    <td>Oui</td>
+                </tr>
+                <tr>
+                    <td>E104</td>
+                    <td>Oui</td>
+                    <td>Oui</td>
+                    <td>Oui</td>
+                    <td>Oui</td>
+                </tr>
+            </table>
+
+            <br>
+
+            <h3>Bâtiment B</h3>
+            <p>Gestionnaire : M. Martin</p>
+            <br>
+            <h3>Salles équipées et données mesurées</h3>
+            <table border="1">
+                <tr>
+                    <th>Salle</th>
+                    <th>Température</th>
+                    <th>Pression</th>
+                    <th>CO2</th>
+                    <th>Humidité</th>
+                </tr>
+                <tr>
+                    <td>B102</td>
+                    <td>Oui</td>
+                    <td>Oui</td>
+                    <td>Oui</td>
+                    <td>Oui</td>
+                </tr>
+                <tr>
+                    <td>B202</td>
+                    <td>Oui</td>
+                    <td>Oui</td>
+                    <td>Oui</td>
+                    <td>Oui</td>
+                </tr>
+            </table>
+        </section>
+
+        <!-- Legal notices -->
+        <section>
+            <h2>Mentions légales</h2>
+
+            <h3>Éditeur</h3>
+            <p>
+                Ce site est réalisé dans le cadre de la SAE23 du Bachelor Universitaire de Technologie,
+                département Réseaux et Télécommunications, IUT de Blagnac.
+            </p>
+
+            <br>
+
+            <h3>Hébergement</h3>
+            <p>
+                Site hébergé sur un serveur LAMPP local (Apache, PHP, MySQL)
+                sous GNU/Linux (Lubuntu), à usage exclusivement pédagogique.
+            </p>
+
+            <br>
+
+            <h3>Données personnelles</h3>
+            <p>
+                Les données collectées sont utilisées uniquement dans le cadre du projet pédagogique.
+                Aucune donnée n'est transmise à des tiers.
+            </p>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>SAE23 - BUT R&amp;T IUT de Blagnac - 2025/2026</p>
+    </footer>
+
+</body>
+</html>
