@@ -2,3 +2,6 @@ Creation lien grafana pour site en lien :
 commande :
 
 cloudflared tunnel --url http://127.0.0.1:3000
+
+
+avec rajout de : "&kiosk" , pour visualiser uniquement le dashboard
