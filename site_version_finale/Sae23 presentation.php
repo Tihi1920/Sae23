@@ -185,7 +185,7 @@ include 'En-tete.php';
 </section>
 
 <div style="margin-top: 20px; text-align: center;">
-    <a href="" target="_blank" style="display: inline-block; background-color: #A0522D; color: white; padding: 12px 24px; text-decoration: none; border-radius: 10px; font-weight: bold;">Consulter notre dépôt GitHub</a>
+    <a href="https://github.com/Tihi1920/Sae23/tree/main" target="_blank" style="display: inline-block; background-color: #A0522D; color: white; padding: 12px 24px; text-decoration: none; border-radius: 10px; font-weight: bold;">Consulter notre dépôt GitHub</a>
 </div>
 
 <?php include 'footer.php'; ?>
