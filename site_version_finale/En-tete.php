@@ -1,9 +1,9 @@
 <?php 
-// En-tete.php - Haut de page global avec détection de page active
+/* En-tete.php - Reusable application header component with navigation logic */
 if (session_status() === PHP_SESSION_NONE) {
     session_start(); 
 }
-// Récupère le nom du fichier actuel (ex: index.php)
+// Isolate active file path names to dynamically handle active context styling
 $current_page = basename($_SERVER['PHP_SELF']);
 ?>
 <!DOCTYPE html>
