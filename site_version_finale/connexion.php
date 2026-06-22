@@ -1,7 +1,5 @@
 <?php
-// connexion.php - Authentification des utilisateurs
-// Style procédural mysqli
-
+/* connexion.php - User authentication and role-based session initialization */
 session_start();
 ini_set('display_errors', 1);
 error_reporting(E_ALL);
@@ -10,30 +8,35 @@ require 'DB.php';
 
 $error = "";
 
+// Process user login request submitted via HTTP POST method
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['login'])) {
 
+    // Sanitize user inputs to shield against potential SQL Injection attacks
     $login    = mysqli_real_escape_string($conn, $_POST['login']);
     $password = mysqli_real_escape_string($conn, $_POST['password']);
 
-    // On cherche le compte dans la table Administration
+    // Retrieve matching user credentials record from Administration table
     $sql    = "SELECT login, mdp FROM Administration WHERE login = '$login'";
     $result = mysqli_query($conn, $sql);
     $user   = mysqli_fetch_assoc($result);
 
+    // Verify record existence and evaluate plain-text password compliance
     if ($user && $password === $user['mdp']) {
 
-        // Le rôle est déterminé par le login
+        // Dynamically assign authorization privileges using username strings
         if ($login === 'admin') {
             $_SESSION['role'] = 'admin';
         } else {
             $_SESSION['role'] = 'gestionnaire';
         }
 
+        // Initialize user session variables and redirect to homepage dashboard
         $_SESSION['user'] = $user['login'];
         header("Location: index.php");
         exit;
 
     } else {
+        // Enforce validation failure feedback messaging
         $error = "Identifiants incorrects.";
     }
 }
@@ -51,7 +54,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['login'])) {
             <h2>Supervision IoT</h2>
 
             <?php if (!empty($error)): ?>
-                <div class="message-erreur"><?= $error ?></div>
+                <p class="message-erreur"><?= $error ?></p>
             <?php endif; ?>
 
             <form action="connexion.php" method="POST">
