@@ -1,4 +1,5 @@
 <?php 
+/* Sae23 presentation.php - Contextual project descriptions and team members documentation */
 session_start();
 include 'En-tete.php'; 
 ?>
@@ -8,21 +9,17 @@ include 'En-tete.php';
     <p>Conception d'une infrastructure complète de monitoring pour l'Internet des Objets (IoT)</p>
 </section>
 
-<div id="tableau">
-    <div>
-        <section>
-            <h2>Qu'est-ce que la SAÉ 23 ?</h2>
-            <p>La <strong>SAÉ 23</strong> est un grand projet d'études qui nous plonge au cœur d'une problématique d'entreprise. L'enjeu est de concevoir et déployer une solution informatique de bout en bout en combinant plusieurs compétences clés de notre formation : la programmation web, l'administration de bases de données, la gestion de systèmes Linux et le travail d'équipe.</p>
-        </section>
-    </div>
-    <div>
-        <section>
-            <h2>Les grands objectifs du projet</h2>
-            <p>Pour mener à bien cette mission, notre travail s'articule autour de deux axes principaux :</p>
-            <p><strong>Une chaîne de traitement robuste (via Docker) :</strong> Un pipeline complet où les données de température transitent par Mosquitto (le broker MQTT), sont triées et routées par Node-RED, sauvegardées dans InfluxDB, puis mises en valeur visuellement sur Grafana.</p>
-        </section>
-    </div>
-</div>
+<section id="tableau">
+    <section>
+        <h2>Qu'est-ce que la SAÉ 23 ?</h2>
+        <p>La <strong>SAÉ 23</strong> est un grand projet d'études qui nous plonge au cœur d'une problématique d'entreprise. L'enjeu est de concevoir et déployer une solution informatique de bout en bout en combinant plusieurs compétences clés de notre formation : la programmation web, l'administration de bases de données, la gestion de systèmes Linux et le travail d'équipe.</p>
+    </section>
+    <section>
+        <h2>Les grands objectifs du projet</h2>
+        <p>Pour mener à bien cette mission, notre travail s'articule autour de deux axes principaux :</p>
+        <p><strong>Une chaîne de traitement robuste (via Docker) :</strong> Un pipeline complet où les données de température transitent par Mosquitto (le broker MQTT), sont triées et routées par Node-RED, sauvegardées dans InfluxDB, puis mises en valeur visuellement sur Grafana.</p>
+    </section>
+</section>
 
 <section>
     <h2>Calendrier d'Avancement (GANTT)</h2>
@@ -184,8 +181,8 @@ include 'En-tete.php';
     <p>La base de données fonctionne correctement et les requêtes PHP récupèrent bien les données attendues. Je suis satisfait de la structure mise en place qui permet une gestion claire et évolutive des capteurs et des bâtiments.</p>
 </section>
 
-<div style="margin-top: 20px; text-align: center;">
+<section style="margin-top: 20px; text-align: center;">
     <a href="https://github.com/Tihi1920/Sae23/tree/main" target="_blank" style="display: inline-block; background-color: #A0522D; color: white; padding: 12px 24px; text-decoration: none; border-radius: 10px; font-weight: bold;">Consulter notre dépôt GitHub</a>
-</div>
+</section>
 
 <?php include 'footer.php'; ?>
